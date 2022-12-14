@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+label {
+
+color: #e2f1f8;
+font-size: 40px;
+
+
+
+
+}
+.contenedor {
+	width: 60%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+    display: grid;
+    grid-template-columns: 3fr;
+	
+    
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+	gap: 20px;
+    
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	
+	
+	
+	background-size: cover;
+	
+    display: flex;
+    flex-direction: column;
+	
+}
+.button-total{
+    
+    text-align:center;
+    background-color: #ff8001;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px;
+    
+    
+}
+
+
+.card .textos {
+	height: 100%;
+    flex: 1 1 auto;
+
+        
+	
+	
+}
+
+body{
+    background-color: #ebebdd;
+}
+
+.header{
+    background-color: #6e7669;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.header .btn button{
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover{
+    background-color: #e2f1f8;
+    color: #ebebdd;
+    transform: scale(1.1);
+}@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #ebebdd;
+}
+
+.header{
+    background-color: #6e7669;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+
+
+
+.header .btn button{
+    font-weight: 12;
+    color: #ffffff;
+    font-size:15px;
+    padding: 7px 20px;
+    background: #ff8001;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover{
+    background-color: #e2f1f8;
+    color: #ff8001;
+    transform: scale(1.1);
+}

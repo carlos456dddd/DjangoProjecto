@@ -1,0 +1,99 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo %}
+Listar autores  {{object}}
+{% endblock titulo %}
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/tablastyle.css' %}">
+<div style="text-align:center;">
+
+    <button class="btn" type="button" id="buttons1" onclick="abrirmodal_crear('{% url 'usuario:crear_proveedor' %}')">Crear producto</button>
+</div>
+
+{% if proveedores %}
+
+<div id="divtamano">
+<table class="table table-sm" id="tabla">
+    <thead id="tamamo">
+        <tr>
+            <th id="tamamo">ID</th>
+            <th id="tamamo">Nombres</th>
+            <th id="tamamo">Apellidos</th>
+            <th id="tamamo">Ciudad</th>
+            <th id="tamamo">Dirección</th>
+            <th id="tamamo">Telefono</th>
+            <th id="tamamo">Nombre de contacto</th>
+
+
+
+            
+        </tr>
+    </thead>
+    <tbody id="tamimo">
+        {% for proveedor in object_list %}
+        <tr>
+            <td id="tamimo">{{proveedor.id}}</td>
+            <td id="tamimo">{{proveedor.nombres}}</td>
+            <td id="tamimo">{{proveedor.ciudad}}</td>
+            <td id="tamimo">{{proveedor.direccion}}</td>
+            <td id="tamimo">{{proveedor.telefono}}</td>
+            <td id="tamimo">{{proveedor.nombreContacto}}</td>
+
+            <td id="buttons">
+                
+                 <button id="buttons1" onclick="abrirmodal('{% url 'usuario:editar_proveedor' proveedor.id %}')">Editar</button>
+                 <button id="buttons1" onclick="abrirmodal_eliminar('{% url 'usuario:eliminar_proveedor' proveedor.id %}')">Eliminar</button>
+                
+                
+            </td>
+            
+        </tr>
+         
+
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<div class="modal fade" id="creacionSucursal" role="dialog">
+
+</div>
+<div class="modal fade" id="edicionSucursal" role="dialog">
+
+</div>
+<div class="modal fade" id="eliminacionSucursal" role="dialog">
+
+</div>
+
+
+
+
+{% endif %}
+
+{% endblock body %}
+{% block extrajs %}  
+
+<script type="text/javascript">
+function abrirmodal(url){
+  $('#edicionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+ 
+  }
+
+function abrirmodal_crear(url){
+  $('#creacionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+ 
+  } 
+  
+function abrirmodal_eliminar(url){
+    $('#eliminacionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+
+}  
+
+</script>
+{% endblock extrajs %}

@@ -1,0 +1,78 @@
+.contenedor {
+	width: 60%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+    display: grid;
+    grid-template-columns: 2fr;
+	
+    
+}
+
+.contenedor-conciertos {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+	gap: 20px;
+    
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contenedor1 {
+	width: 60%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+    display: grid;
+    grid-template-columns: 3fr;
+	
+    
+}
+img{
+    padding: 10px 2;
+    width: 55%;
+    margin: 10px 0px -4px 25px;
+
+
+}
+
+.contenedor-conciertos1 {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+	gap: 20px;
+    
+}
+
+.card1 {
+	border-radius: 10px;
+	font-weight: bold;
+	background-size: cover;	
+    display: flex;
+    flex-direction: column;
+	background-color: rgb(176, 152, 137);
+	margin: auto 30px 10px -40px;
+}
+.card1 .textos {
+	height: 100%;
+    flex: 1 1 auto;	
+	
+}
+.button-totals{
+    border:0px;
+    text-align:center;
+    background-color: #ff8001;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px;
+	   
+    
+}

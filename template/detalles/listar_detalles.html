@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo %}
+{% endblock titulo %}
+
+{% block body %}
+<script></script>
+<style>
+ .modal-lg { max-width: 80% !important; }
+.h6{font-size:15px !important;}
+
+</style>
+<link rel="stylesheet" href="{% static 'css/tablastyle.css' %}">
+
+            {% if object_list %}
+            
+            <div id="divtamano">
+                <table class="table table-sm" id="tabla">
+                    <thead id="tamamo">
+                        <tr>
+                            <th id="tamamo">ID</th>
+                            <th id="tamamo">Venta</th>
+                            <th id="tamamo">Producto</th>
+                            <th id="tamamo">Precio</th>
+                            <th id="tamamo">Cantidad</th>
+                            <th id="tamamo">Subtotal</th>
+                
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="tamimo">
+                        {% for detalles in object_list %}
+                        <tr>
+                            <td id="tamimo">{{detalles.id}}</td>
+                            <td id="tamimo">{{detalles.sale}}
+                                
+                            </td>
+                            <td id="tamimo">{{detalles.prod}}</td>
+                            <td id="tamimo">{{detalles.price}}</td>
+                            <td id="tamimo">{{detalles.cant}}</td>
+                            <td id="tamimo">{{detalles.subtotal}}</td>
+                
+                            <td id="buttons">
+                                
+                                <button id="buttons1" onclick="abrirmodal('{% url 'usuario:editar_detalles' detalles.id %}')">Editar</button>
+                                       
+                                <button id="buttons1" onclick="abrirmodal_eliminar('{% url 'usuario:eliminar_detalles' detalles.id %}')">Eliminar</button>
+                                
+                                
+                            </td>
+                            
+                        </tr>
+                         
+                
+                        {% endfor %}
+                    </tbody>
+              
+          
+   
+   
+
+    </tbody>
+</table>
+</div>
+<div class="modal fade" id="creacionSucursal" role="dialog">
+
+</div>
+<div class="modal fade" id="edicionSucursal" role="dialog">
+
+</div>
+<div class="modal fade" id="eliminacionSucursal" role="dialog">
+
+</div>
+
+
+
+
+{% endif %}
+
+{% endblock body %}
+{% block extrajs %}  
+
+<script type="text/javascript">
+function abrirmodal(url){
+  $('#edicionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+ 
+  }
+
+function abrirmodal_crear(url){
+  $('#creacionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+ 
+  } 
+  
+function abrirmodal_eliminar(url){
+    $('#eliminacionSucursal').load(url,function(){
+    $(this).modal('show');
+  });
+
+}  
+
+</script>
+{% endblock extrajs %}

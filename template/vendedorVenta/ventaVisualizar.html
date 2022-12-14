@@ -1,0 +1,87 @@
+
+{% load static %}
+{% block titulo %}
+Creación de productos
+{% endblock titulo %}
+<link href="{% static 'lib/jquery-ui-1.12.1/jquery-ui.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'lib/jquery-ui-1.12.1/jquery-ui.min.js' %}"></script>
+
+    <link href="{% static 'lib/select2-4.0.13/css/select2.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
+    <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
+    
+{% block body %}    
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edición</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="POST" enctype="multipart/form-data" class="form-horizontal">
+          <div class="modal-body">
+           
+            {% if productos %}
+            
+            <table class="table table-sm" id="tabla">
+                <thead id="tamamo">
+                    <tr>
+                        <th id="tamamo">ID</th>
+                        <th id="tamamo">Nombres</th>
+                        <th id="tamamo">Caracteristicas</th>
+                        <th id="tamamo">Cantidad</th>
+                        <th id="tamamo">Precio</th>
+                        <th id="tamamo">Impuestos</th>
+                        <th id="tamamo">Descuento</th>
+                        <th id="tamamo">Ubicación</th>
+                        <th id="tamamo">Disponible</th>
+                        <th id="tamamo">Sucursal</th>
+                        <th id="tamamo">Opiciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="tamimo">
+                    {% for producto in productos %}
+                    <tr>
+                        <td id="tamimo">{{producto.idProducto}}</td>
+                        <td id="tamimo">{{producto.nombre}}</td>
+                        <td id="tamimo">{{producto.caracteristicas}}</td>
+                        <td id="tamimo">{{producto.cantidad}}</td>
+                        <td id="tamimo">{{producto.precio}}</td>
+                        <td id="tamimo">{{producto.impuestos}}</td>
+                        <td id="tamimo">{{producto.descuentoPorc}}</td>
+                        <td id="tamimo">{{producto.ubicacionTienda}}</td>
+                        <td id="tamimo">{{producto.disponible}}</td>
+                        <td id="tamimo">{{producto.sucursal}}</td>
+                        <td id="buttons">
+                            
+                             <button>Vender</button>
+                            
+                            
+                        </td>
+                        
+                    </tr>
+                     
+            
+                    {% endfor %}
+          </div>
+        
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
